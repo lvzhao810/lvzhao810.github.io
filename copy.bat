@@ -1,0 +1,1 @@
+xcopy "E:\hexo\public" "E:\blog\lvzhao810.github.io" /e /i /h/y

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo + Github 搭建个人独立博客</title>
+    <url>/2020/04/05/Hexo%20+%20Github%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="原由"><a href="#原由" class="headerlink" title="原由"></a>原由</h1><blockquote>
+<p>做IT行业，有个博客，能比较直观体现一个人水平，所以自己也想搭建一个，一方面是给自己做笔记，可以提升自己的思考、写作、总结能力； 经过各种找资料，踩过各种坑，终于搭建好了hexo，写下这篇博客，希望能给需要帮助的同行带来方便。</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="什么是hexo？"><a href="#什么是hexo？" class="headerlink" title="什么是hexo？"></a>什么是hexo？</h1><blockquote>
+<p>Hexo是一个快速，简单和强大的博客框架。您在<a href="https://www.zybuluo.com" target="_blank" rel="noopener">Markdown</a>（或其他语言）中撰写帖子，Hexo会在几秒钟内生成具有美丽主题的静态文件。可访问<a href="https://hexo.io/" target="_blank" rel="noopener">hexo原网站</a>.</p>
+</blockquote>
+<h1 id="什么是GitHub？"><a href="#什么是GitHub？" class="headerlink" title="什么是GitHub？"></a>什么是GitHub？</h1><blockquote>
+<p>GitHub是用于版本控制和协作的代码托管平台。它可以让您和其他人在任何地方一起工作。</p>
+</blockquote>
+<ul>
+<li><p>github账户的注册和配置<br>如果已经拥有账号，请跳过此步~</p>
+<ul>
+<li>a. Github注册<br>打开(<a href="https://github.com)，在下图的框中，分别输入自己的用户名，邮箱，密码。" target="_blank" rel="noopener">https://github.com)，在下图的框中，分别输入自己的用户名，邮箱，密码。</a></li>
+</ul>
+<p><img src="https://i.loli.net/2017/08/27/59a26b56c2239.jpg" alt="注册页面"></p>
+<p>  然后前往自己刚才填写的邮箱，点开Github发送给你的注册确认信，确认注册，结束注册流程。</p>
+<p>  <strong><em>一定要确认注册，否则无法使用github-pages！</em></strong></p>
+<ul>
+<li><p>b. 创建代码库</p>
+<p>登陆之后，点击页面右上角的加号，选择New repository：</p>
+<p><img src="https://i.loli.net/2017/08/27/59a26cfff094c.png" alt="创建代码/储存库"></p>
+</li>
+<li><p>c. 进入代码库创建页面：<br>在Repository name下填写yourname.github.io，Description (optional)下填写一些简单的描述（不写也没有关系），如图所示：</p>
+<p><img src="https://i.loli.net/2017/08/27/59a26f800c3f2.png" alt=""><br>注意：比如你的github名称是xiaoming ,这里你就填 xiaoming.github.io</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="系统环境配置"><a href="#系统环境配置" class="headerlink" title="系统环境配置"></a>系统环境配置</h1><ul>
+<li><p>安装git<br>下载地址：<a href="http://git-scm.com/download/win" target="_blank" rel="noopener">git官网下载</a><br>也可以在这里下载：(<a href="https://github.com/waylau/git-for-win" target="_blank" rel="noopener">https://github.com/waylau/git-for-win</a>)<br>下载好git驱动，然后就进入了Git的安装界面，如图：<img src="https://i.loli.net/2017/08/27/59a25119bcb65.png" alt="git安装例图"><br>之后就一路next下去，当然你可以更换安装的位置，这个自己决定。</p>
+</li>
+<li><p>安装node.js<br>下载地址：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js官方下载</a><br>下载好node.js驱动，然后就进入了node.js的安装界面，如图：<img src="https://i.loli.net/2017/08/27/59a25714704fd.png" alt="node安装例图"><br>之后就一路next下去，当然你可以更换安装的位置，这个自己决定。</p>
+</li>
+<li><p>安装npm</p>
+<blockquote>
+<p>由于新版的nodejs已经集成了npm，所以之前npm也一并安装好了。</p>
+</blockquote>
+<p>  通过输入 “npm -v” 来测试是否成功安装：<br>  <code>npm -v</code><br>  <code>5.3.0</code></p>
+<p>  来测试是否成功安装。命令如下，出现版本提示表示安装成功;<br>  如果你安装的是旧版本的 npm，可以很容易得通过 npm 命令来升级，命令如下：</p>
+<blockquote>
+<p>npm install npm@latest -g</p>
+</blockquote>
+<p>  可以更新npm至最新版本。<br>  其中 @ 符号后面可以添加你想更新到的版本号。</p>
+</li>
+</ul>
+<h3 id="我当前的配置版本（17年安装，2020年重构），及相关查询版本命令："><a href="#我当前的配置版本（17年安装，2020年重构），及相关查询版本命令：" class="headerlink" title="我当前的配置版本（17年安装，2020年重构），及相关查询版本命令："></a>我当前的配置版本（17年安装，2020年重构），及相关查询版本命令：<img src="https://i.loli.net/2017/08/27/59a24d16952ac.png" alt="环境配置图片"></h3><ul>
+<li>安装git （查询版本命令：git –version）</li>
+<li>安装node.js （查询版本命令：node -v）</li>
+<li>安装hexo （查询版本命令：hexo -v）</li>
+<li>安装npm （查询版本命令：npm -v）</li>
+<li><strong><em>注意：</em></strong>各个版本尽量是当前最新版本，旧版本的，在更换主题时，可能存在不兼容或某些文件缺失的报错现象。</li>
+</ul>
+<ul>
+<li><p>安装hexo<br><a href="https://hexo.io/" target="_blank" rel="noopener">hexo官方网站</a></p>
+<p>  hexo的安装,前提是安装了前面的 <strong>git</strong> 和 <strong>node.js</strong>。 然后在我的电脑中建立一个名字叫「Hexo」的文件夹，然后在此文件夹中右键打开Git Bash here(或者打开git在，找到相应安装文件夹下面)。</p>
+<p>  <img src="https://i.loli.net/2017/08/27/59a25ea296f5f.png" alt="tu"><br>  在命令行中输入：</p>
+<ul>
+<li><p>npm install -g hexo （安装npm）</p>
+</li>
+<li><p>hexo init （部署Hexo）Hexo随后会自动在目标文件夹建立网站所需要的所有文件。</p>
+</li>
+<li><p>hexo generate (hexo g)                      生成静态文件，会在当前目录下生成一个新的叫做public的文件夹</p>
+</li>
+<li><p>hexo server (hexo s) 启动本地web服务，用于博客的预览<br>如果出现“npm ERR”报错或者下载速度慢、不稳定，则可以考虑换成cnpm(国内的)尝试，npm install -g hexo。</p>
+<p>然后你将会看到:<br><img src="https://i.loli.net/2017/08/27/59a264c507990.png" alt=""><br>然后浏览器输入：localhost:4000，如果部署成功的话，则会出现一个静态博客页面了。<br><img src="https://i.loli.net/2017/08/27/59a269a444e98.jpg" alt="hexo初始静态页面"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><blockquote>
+<p>themes 目录下默认存放的只有经典的<a href="https://github.com/hexojs/hexo-theme-landscape.git" target="_blank" rel="noopener">Landscape</a> 主题，上面创建的博客使用的也是该主题。当然，Hexo 有非常多的主题，可参见<a href="https://hexo.io/themes/" target="_blank" rel="noopener">官方主题网站</a>。下面将博客主题更换为非常流行的 <a href="https://github.com/iissnan/hexo-theme-next.git" target="_blank" rel="noopener">NexT</a> 主题，我当前使用的 NexT 主题版本为 5.1.2。</p>
+</blockquote>
+<ul>
+<li><p>在Hexo的根目录<strong>themes</strong>下面执行<br><code>git clone https://github.com/iissnan/hexo-theme-next.git themes/next</code><br>说明：（右键git clone后 输入网址<code>https://github.com/iissnan/hexo-theme-next.git</code>点击下载）</p>
+</li>
+<li><p><strong>注意：*</strong>下载好的主题文件夹名hexo-theme-next,这个主题文件夹名和下面config.yml中要修改的theme属性的文件名一致。</p>
+</li>
+<li><p>启用主题<br>修改Hexo目录下的<strong><em>config.yml</em></strong>配置文件中的<strong>theme</strong>属性，将其设置为<strong><em>hexo-theme-next</em></strong>。</p>
+</li>
+<li><p>生效（hexo命令框执行）<br><code>hexo clean</code> (清理缓存，可不操作)<br><code>hexo g</code> #生成<br><code>hexo s</code> #启动本地服务，进行文章预览调试</p>
+</li>
+<li><p>浏览器确认修改生效   <code>localhost:4000</code></p>
+<blockquote>
+<p>提交到GitHub<br>  将Hexo根目录下public中的所有内容提交给上面几步在Github上面创建的Repository（lvzhao810.github.io）上,上传成功后，在浏览器上面直接输入：<a href="https://lvzhao810.github.io/" target="_blank" rel="noopener">https://lvzhao810.github.io/</a> 即可立马看到效果了。<br>  个人的一个博客到此就已经搭建完成了。</p>
+</blockquote>
+<p>  <img src="https://i.loli.net/2017/08/27/59a27d5875022.png" alt="修改后的博客展示"></p>
+</li>
+</ul>
+<h1 id="这个主题的相关个性设定"><a href="#这个主题的相关个性设定" class="headerlink" title="这个主题的相关个性设定"></a>这个主题的相关个性设定</h1><blockquote>
+<p>可以参考博客：<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a><br>或：<a href="http://fogmoon.com/2016/10/29/build-personal-blog-with-hexo/" target="_blank" rel="noopener">http://fogmoon.com/2016/10/29/build-personal-blog-with-hexo/</a></p>
+</blockquote>
+<hr>
+<h1 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h1><blockquote>
+<p><code>hexo new &quot;postName&quot;</code> #新建文章<br><code>hexo new page &quot;pageName&quot;</code> #新建页面<br><code>hexo generate</code> #生成静态页面至public目录<br><code>hexo server</code> #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br><code>hexo deploy</code> #将.deploy目录部署到GitHub<br>简写<br><code>hexo n == hexo new</code><br><code>hexo g == hexo generate</code><br><code>hexo s == hexo server</code><br><code>hexo d == hexo deploy</code><br>生效<br><code>hexo clean</code> #清除缓存<br><code>hexo g</code> #生成<br><code>hexo s</code> #启动本地服务，进行文章预览调试</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>web开发</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网页变灰效果</title>
+    <url>/2020/04/05/filter_grayscales/</url>
+    <content><![CDATA[<h1 id="核心原理：使用css3的滤镜效果，filter-grayscale-将整个界面变为黑白色调"><a href="#核心原理：使用css3的滤镜效果，filter-grayscale-将整个界面变为黑白色调" class="headerlink" title="核心原理：使用css3的滤镜效果，filter grayscale 将整个界面变为黑白色调"></a>核心原理：使用css3的滤镜效果，filter grayscale 将整个界面变为黑白色调</h1><h2 id="方式一：通过-JS-可以设定指定时间，自动变灰以及复原"><a href="#方式一：通过-JS-可以设定指定时间，自动变灰以及复原" class="headerlink" title="方式一：通过 JS 可以设定指定时间，自动变灰以及复原"></a>方式一：通过 JS 可以设定指定时间，自动变灰以及复原</h2><a id="more"></a>
+
+<blockquote>
+<p>注意：以下代码需要引入 <strong>JQuery</strong> </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">＜script&gt;</span><br><span class="line">    &#x2F;&#x2F;1. 得到当前的时间</span><br><span class="line">    var nowTime&#x3D; new Date().getTime();</span><br><span class="line">    &#x2F;&#x2F;2. 设置开始的时间是2020年4月4号凌晨</span><br><span class="line">    var beginTime&#x3D;new Date(&#39;2020&#x2F;04&#x2F;04 00:00:00&#39;).getTime();</span><br><span class="line">    &#x2F;&#x2F;3. 设置结束的时间是2020年4月5号凌晨</span><br><span class="line">    var overTime&#x3D;new Date(&#39;2020&#x2F;04&#x2F;05 00:00:00&#39;).getTime();</span><br><span class="line">    &#x2F;&#x2F;4. 如果当前时间大于等于开始时间同时小于了结束时间，简单说就是当前时间在4. 4号和5号零点之间执行</span><br><span class="line">    &#x2F;&#x2F;5. 把html 设置灰色滤镜</span><br><span class="line">    if(beginTime&lt;&#x3D;nowTime &amp;&amp; nowTime&lt;overTime)&#123;</span><br><span class="line">        $(&quot;html&quot;).css(&#123;</span><br><span class="line">        &#39;-webkit-filter&#39;: &#39;grayscale(100%)&#39;,</span><br><span class="line">        &#39;-moz-filter&#39;: &#39;grayscale(100%)&#39;,</span><br><span class="line">        &#39;-ms-filter&#39;: &#39;grayscale(100%)&#39;,</span><br><span class="line">        &#39;-o-filter&#39;: &#39;grayscale(100%)&#39;,</span><br><span class="line">        &#x2F;&#x2F;ie滤镜</span><br><span class="line">        &#39;filter&#39;:&#39;progid:DXlmageTransform.Microsoft.Basiclmage(grayscale&#x3D;1)&#39;,</span><br><span class="line">        &#x2F;&#x2F;ie6 等低版本浏览器不需要加滤镜</span><br><span class="line">        &#39;_filter&#39;: &#39;none&#39;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="方式二-直接使用CSS处理，但是不能设置时间"><a href="#方式二-直接使用CSS处理，但是不能设置时间" class="headerlink" title="方式二: 直接使用CSS处理，但是不能设置时间"></a>方式二: 直接使用CSS处理，但是不能设置时间</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    html&#123;</span><br><span class="line">    &#x2F;*滤镜效果*&#x2F;</span><br><span class="line">    filter: grayscale(100%);</span><br><span class="line">    &#x2F;*webkit内核*&#x2F;</span><br><span class="line">    -webkit-filter: grayscale(100%);</span><br><span class="line">    &#x2F;*火狐内核*&#x2F;</span><br><span class="line">    -moz-filter: grayscale(100%);</span><br><span class="line">    &#x2F;*微软内核*&#x2F;</span><br><span class="line">    -ms-filter: grayscale(100%);</span><br><span class="line">    &#x2F;*欧朋内核*&#x2F;</span><br><span class="line">    -o-filter: grayscale(100%);</span><br><span class="line">    &#x2F;*ie专有滤镜*&#x2F;</span><br><span class="line">    filter: progid:DXImageTransform.Microsoft.Basiclmage(grayscale&#x3D;1);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<!-- ![Markdown-logo](https://www.zybuluo.com/static/img/logo.png) -->
+<!-- 设置图片大小 -->
+<img src="https://www.zybuluo.com/static/img/logo.png" width="200px"  style="text-align: left;">
+
+<h3 id="Cmd-Markdown-编写"><a href="#Cmd-Markdown-编写" class="headerlink" title="Cmd Markdown 编写"></a><a href="https://www.zybuluo.com/cmd/" target="_blank" rel="noopener">Cmd Markdown 编写</a></h3><h3 id="图片展区"><a href="#图片展区" class="headerlink" title="图片展区"></a>图片展区</h3><p><img src="https://wx4.sinaimg.cn/mw690/6b8c14f8gy1gdgi70kj0tj21hp0u0wwb.jpg" alt="海琴烟-笼中雀"></p>
+<h3 id="出自博主wlop-漫画【鬼刀】-海琴烟-笼中雀"><a href="#出自博主wlop-漫画【鬼刀】-海琴烟-笼中雀" class="headerlink" title="出自博主wlop-漫画【鬼刀】(海琴烟-笼中雀)"></a><a href="https://weibo.com/wlop?is_all=1#_rnd1586081313260" target="_blank" rel="noopener">出自博主wlop-漫画【鬼刀】(海琴烟-笼中雀)</a></h3>]]></content>
+      <categories>
+        <category>web开发</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
+        <tag>JavaScrit</tag>
+        <tag>filter</tag>
+        <tag>网页变灰滤镜</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>部署项目到云端-线上</title>
+    <url>/2020/04/05/%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E5%88%B0%E4%BA%91%E7%AB%AF-%E7%BA%BF%E4%B8%8A/</url>
+    <content><![CDATA[<h1 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h1><ul>
+<li><p>没有版本控制和协作的代码托管平台，先注册，如：GitHub、码云、微软云等等。</p>
+</li>
+<li><p>这里以github账户的注册和配置为例，其他的平台相差不大。</p>
+</li>
+</ul>
+<a id="more"></a>
+
+<p><strong><em>如果已经拥有账号，请跳过此步</em></strong></p>
+<h2 id="Github注册"><a href="#Github注册" class="headerlink" title="Github注册"></a><a href="https://github.com" target="_blank" rel="noopener">Github注册</a></h2><p>  在下图的框中，分别输入自己的用户名，邮箱，密码。</p>
+<p> <img src="https://i.loli.net/2017/08/27/59a26b56c2239.jpg" alt="注册页面"></p>
+<pre><code>然后前往自己刚才填写的邮箱，点开Github发送给你的注册确认信，确认注册，结束注册流程。</code></pre><p><strong><em>一定要确认注册，否则无法使用github-pages！</em></strong></p>
+<hr>
+<h1 id="二、部署"><a href="#二、部署" class="headerlink" title="二、部署"></a>二、部署</h1><h2 id="1-先创建仓库："><a href="#1-先创建仓库：" class="headerlink" title="1. 先创建仓库："></a>1. 先创建仓库：</h2><pre><code>登陆账号之后，点击页面右上角的加号，选择New repository</code></pre><p>   <img src="https://i.loli.net/2017/08/27/59a26cfff094c.png" alt="创建代码/储存库"><br>    或者 new：<img src="https://i.loli.net/2020/04/05/osuJOE2KetTn6mi.png" alt="创建代码/储存库"></p>
+<h2 id="2-进入代码库创建页面："><a href="#2-进入代码库创建页面：" class="headerlink" title="2. 进入代码库创建页面："></a>2. 进入代码库创建页面：</h2><blockquote>
+<p>点击创建仓库 如图所示：</p>
+</blockquote>
+<p>   <img src="https://i.loli.net/2020/04/05/5Xeg971hqSFK3sw.png" alt=""></p>
+<h2 id="3-clone克隆该项目到本地（复制仓库链接）"><a href="#3-clone克隆该项目到本地（复制仓库链接）" class="headerlink" title="3. clone克隆该项目到本地（复制仓库链接）"></a>3. clone克隆该项目到本地（复制仓库链接）</h2><p><img src="https://i.loli.net/2020/04/05/M1K6kmnDYpCxIqA.png" alt=""></p>
+<h2 id="4-到本地找个文件夹装将要克隆的仓库包"><a href="#4-到本地找个文件夹装将要克隆的仓库包" class="headerlink" title="4. 到本地找个文件夹装将要克隆的仓库包"></a>4. 到本地找个文件夹装将要克隆的仓库包</h2><blockquote>
+<p>右键选择 Git Bash Here<br>输入 <code>git clone + 仓库链接</code></p>
+</blockquote>
+<p><img src="https://i.loli.net/2020/04/05/rcMOi5BNuoFAl3L.png" alt=""></p>
+   <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;lvzhao810&#x2F;blog.git</span><br></pre></td></tr></table></figure>
+<h2 id="5-下载好仓库文件夹，进到该文件夹里，里面有（隐藏的文件夹git，这里面保存着线上的部署信息，用来线上和本地桥接-不需管），把需要上传的数据文件，拖进这个仓库文件夹。"><a href="#5-下载好仓库文件夹，进到该文件夹里，里面有（隐藏的文件夹git，这里面保存着线上的部署信息，用来线上和本地桥接-不需管），把需要上传的数据文件，拖进这个仓库文件夹。" class="headerlink" title="5. 下载好仓库文件夹，进到该文件夹里，里面有（隐藏的文件夹git，这里面保存着线上的部署信息，用来线上和本地桥接,不需管），把需要上传的数据文件，拖进这个仓库文件夹。"></a>5. 下载好仓库文件夹，进到该文件夹里，里面有（隐藏的文件夹git，这里面保存着线上的部署信息，用来线上和本地桥接,不需管），把需要上传的数据文件，拖进这个仓库文件夹。</h2><blockquote>
+<p>当前文件夹下右键选择 Git Bash Here</p>
+</blockquote>
+   <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add .&#x2F;      &#x2F;&#x2F;新增文件</span><br><span class="line">git commit -m&quot;上传文件说明&quot;         &#x2F;&#x2F;简单描述增添删改备注</span><br><span class="line">git pull        &#x2F;&#x2F;把线上的文件拉取下来和本地合并</span><br><span class="line">git push        &#x2F;&#x2F;上传代码（部署到托管平台）</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>web开发</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
+        <tag>JavaScrit</tag>
+        <tag>git线上部署</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>防抖和节流</title>
+    <url>/2020/04/06/%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81/</url>
+    <content><![CDATA[<h1 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h1><h2 id="原由："><a href="#原由：" class="headerlink" title="原由："></a>原由：</h2><p>为了防止用户频繁触发某一事件，导致的卡顿，堵塞，崩溃的现象，优化性能和体验</p>
+<a id="more"></a>
+
+<h2 id="应用场景："><a href="#应用场景：" class="headerlink" title="应用场景："></a>应用场景：</h2><blockquote>
+<ol>
+<li>scroll事件滚动触发</li>
+<li>框输入查询</li>
+<li>表单验证</li>
+<li>按钮提交事件</li>
+<li>浏览器窗口缩放，resize事件</li>
+</ol>
+</blockquote>
+<h2 id="防抖原理："><a href="#防抖原理：" class="headerlink" title="防抖原理："></a>防抖原理：</h2><p><strong>事件响应函数（dosomeThing）在一段时间后（时长自己定义：如300ms）才执行，如果在这段时间内再次调用，则重新计算执行时间；当预定的时间内没有再次调用该函数，则执行该函数（dosomeThing）。</strong></p>
+<h3 id="第一种方法：引入js库underscore-js"><a href="#第一种方法：引入js库underscore-js" class="headerlink" title="第一种方法：引入js库underscore.js"></a>第一种方法：引入js库<a href="https://cdn.bootcss.com/underscore.js/1.9.1/underscore.js" target="_blank" rel="noopener">underscore.js</a></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">引入别人封装好的js文件（underscore.js）CDN引入：</span><br><span class="line">https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;underscore.js&#x2F;1.9.1&#x2F;underscore.js</span><br><span class="line">&lt;div class&#x3D;&quot;container&quot; style&#x3D;&quot;width: 100%;height: 300px;background-color: skyblue;text-align: center;font-size: 50px;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;underscore.js&#x2F;1.9.1&#x2F;underscore.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script &gt;</span><br><span class="line">    let container &#x3D; document.querySelector(&quot;.container&quot;);</span><br><span class="line">    let count &#x3D; 0 ;</span><br><span class="line">    function dosomeThing(e)&#123;</span><br><span class="line">        &lt;!-- event指向问题 --&gt;</span><br><span class="line">        console.log(e);</span><br><span class="line">        &lt;!-- 改变执行函数内部this的指向 --&gt;</span><br><span class="line">        console.log(this);</span><br><span class="line">        &lt;!-- 可能会做回调或者ajax请求 --&gt;</span><br><span class="line">        container.innerHTML &#x3D; count++;</span><br><span class="line">        return &quot;结果&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 高阶函数 防抖 调用防抖函数 _.debounce()</span><br><span class="line">    container.onmousemove &#x3D; _.debounce(dosomeThing,300);</span><br><span class="line">    &#x2F;&#x2F;参数，第一：处理事件函数，第二：触发时间，第三：默认false(true为立即执行函数)</span><br><span class="line">    &#x2F;&#x2F; _.debounce(dosomeThing,300);</span><br><span class="line">    &#x2F;&#x2F; container.onmousemove &#x3D; dosomeThing; &#x2F;&#x2F; 不做处理</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="第二种方法：手写简版"><a href="#第二种方法：手写简版" class="headerlink" title="第二种方法：手写简版"></a>第二种方法：手写简版</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">function fengZn(fn,wait)&#123;</span><br><span class="line">    var timer;</span><br><span class="line">    return function()&#123;</span><br><span class="line">        &lt;!-- 1.清除定时器; --&gt;</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">        &lt;!-- 2.重新注册定时器; --&gt;</span><br><span class="line">        timer &#x3D; setTimeout(()&#x3D;&gt;&#123;</span><br><span class="line">            console.log(fn);</span><br><span class="line">            fn()</span><br><span class="line">        &#125;,wait)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">function resizeEvent()&#123;</span><br><span class="line">    console.log(&quot;他扒拉我&quot;)</span><br><span class="line">&#125;</span><br><span class="line">window.addEventListener(&quot;resize&quot;,fengZn(resizeEvent,2000));</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="第三种方法：模拟库，手写封装一个健壮版"><a href="#第三种方法：模拟库，手写封装一个健壮版" class="headerlink" title="第三种方法：模拟库，手写封装一个健壮版"></a>第三种方法：模拟库，手写封装一个健壮版</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;container&quot; style&#x3D;&quot;width: 100%;height: 300px;background-color: skyblue;text-align: center;font-size: 50px;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;button class&#x3D;&quot;btn&quot;&gt;取消防抖&lt;&#x2F;button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    let container &#x3D; document.querySelector(&quot;.container&quot;);</span><br><span class="line">    let count &#x3D; 0 ;</span><br><span class="line">    &#x2F;&#x2F; 触发后，处理事件。</span><br><span class="line">    function dosomeThing()&#123;</span><br><span class="line">        container.innerHTML &#x3D; count++;</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;!-- 传入参数处理事件函数，触发时间，是否立即执行 --&gt;</span><br><span class="line">    function debounce(func,wait,immediate)&#123;</span><br><span class="line">        var timeout,result;</span><br><span class="line">        let decounced &#x3D; function()&#123;</span><br><span class="line">            &lt;!-- 重置this，args指向 --&gt;</span><br><span class="line">            var context &#x3D; this;</span><br><span class="line">            var args &#x3D; arguments;</span><br><span class="line">            if(timeout) clearTimeout(timeout);</span><br><span class="line">            if(immediate)&#123;</span><br><span class="line">                var callNow &#x3D; !timeout;</span><br><span class="line">                timeout &#x3D; setTimeout(function()&#123;</span><br><span class="line">                timeout &#x3D; null;</span><br><span class="line">                &#125;,wait);</span><br><span class="line">                &lt;!-- 立即执行 --&gt;</span><br><span class="line">                if(callNow) result &#x3D; func.apply(context,args);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                &lt;!-- 不会立即执行 --&gt;</span><br><span class="line">                timeout &#x3D; setTimeout(function()&#123;</span><br><span class="line">                    func.apply(context,args);</span><br><span class="line">                &#125;,wait);</span><br><span class="line">            &#125;</span><br><span class="line">            return result;</span><br><span class="line">        &#125;</span><br><span class="line">        &lt;!-- 取消防抖，定义一个取消方法cancel --&gt;</span><br><span class="line">        decounced.cancel &#x3D; function()&#123;</span><br><span class="line">            clearTimeout(timeout)</span><br><span class="line">            &lt;!-- 防止内存泄露 --&gt;</span><br><span class="line">            timeout &#x3D; null;</span><br><span class="line">        &#125;</span><br><span class="line">        return decounced;</span><br><span class="line">    &#125;</span><br><span class="line">    let btn &#x3D; document.querySelector(&quot;.btn&quot;);</span><br><span class="line">    let dosome &#x3D; debounce(dosomeThing,1000);</span><br><span class="line">    container.onmousemove &#x3D; dosome;</span><br><span class="line">    &#x2F;&#x2F; 取消防抖</span><br><span class="line">    btn.onclick &#x3D; function()&#123;</span><br><span class="line">        dosome.cancel()</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h1><h2 id="原由：-1"><a href="#原由：-1" class="headerlink" title="原由："></a>原由：</h2><p><strong>防止多次调用函数,减少不必要的性能损耗</strong></p>
+<h2 id="应用场景：-1"><a href="#应用场景：-1" class="headerlink" title="应用场景："></a>应用场景：</h2><blockquote>
+<ol>
+<li>DOM元素的拖拽功能实现</li>
+<li>射击游戏</li>
+<li>计算鼠标移动的距离</li>
+<li>监听scroll滚动事件</li>
+<li>点击事件</li>
+</ol>
+</blockquote>
+<h2 id="节流原理："><a href="#节流原理：" class="headerlink" title="节流原理："></a>节流原理：</h2><p><strong>如果你持续触发事件，每隔一段时间，只执行一次事件</strong></p>
+<h3 id="第一种方法：引入js库和-防抖-一样-CDN-引入-underscore-js文件，在调用函数方法时："><a href="#第一种方法：引入js库和-防抖-一样-CDN-引入-underscore-js文件，在调用函数方法时：" class="headerlink" title="第一种方法：引入js库和 防抖 一样 CDN 引入 underscore.js文件，在调用函数方法时："></a>第一种方法：引入js库和 <strong><em>防抖</em></strong> 一样 CDN 引入 <a href="https://cdn.bootcss.com/underscore.js/1.9.1/underscore.js" target="_blank" rel="noopener">underscore.js</a>文件，在调用函数方法时：</h3><p><strong><em>注意： 是调用方法： _.throttle()</em></strong><br><strong><em>_.throttle() ，传参的第三参数（可不传）是个对象，有两个变量可设置</em></strong> </p>
+<blockquote>
+<p>leading: false, 设置是否禁止第一次触发执行<br>trailing: false 设置是否禁止最后一次触发执行</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 高阶函数 防抖 调用节流函数方法 _.throttle()</span><br><span class="line">container.onmousemove &#x3D; _.throttle(dosomeThing,300);</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="第二种方法：利用定时器"><a href="#第二种方法：利用定时器" class="headerlink" title="第二种方法：利用定时器"></a>第二种方法：利用定时器</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">    function throttle(fn)&#123;</span><br><span class="line">        var canRun &#x3D; true;</span><br><span class="line">        return function()&#123;</span><br><span class="line">            &lt;!-- 如果开关关闭,则不允许执行后续语句 --&gt;</span><br><span class="line">            if(!canRun) return;</span><br><span class="line">            fn()</span><br><span class="line">            canRun &#x3D; false;</span><br><span class="line">            &lt;!-- 在一定延迟之后,将开关变成true; --&gt;</span><br><span class="line">            setTimeout(()&#x3D;&gt;&#123;</span><br><span class="line">                canRun &#x3D; true;</span><br><span class="line">            &#125;,1000)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;!-- resize 回调事件&#x2F;事件处理程序 --&gt;</span><br><span class="line">    function conName()&#123;</span><br><span class="line">        console.log(&quot;他扒拉我&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    window.addEventListener(&quot;resize&quot;,throttle(conName));</span><br><span class="line">    &lt;!-- scroll 回调事件&#x2F;事件处理程序 --&gt;</span><br><span class="line">    function scrollEvent()&#123;</span><br><span class="line">    &lt;!-- 滚动时要做的事情 --&gt;</span><br><span class="line">        console.log(&quot;滚动&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    window.addEventListener(&quot;scroll&quot;,throttle(scrollEvent));</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="第三种方法：模拟-underscore-js-库"><a href="#第三种方法：模拟-underscore-js-库" class="headerlink" title="第三种方法：模拟 underscore.js 库"></a>第三种方法：模拟 <a href="https://cdn.bootcss.com/underscore.js/1.9.1/underscore.js" target="_blank" rel="noopener">underscore.js</a> 库</h3><p><strong><em>触发后调用相关函数方法</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F;利用underscore.js库</span><br><span class="line">&#x2F;&#x2F; let dosome &#x3D; _throttle(dosomeThing,1000,&#123;</span><br><span class="line">&#x2F;&#x2F; 	leading: false, </span><br><span class="line">&#x2F;&#x2F; 	trailing: true &#x2F;&#x2F;禁止最一次触发执行</span><br><span class="line">&#x2F;&#x2F; &#125;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; let dosome &#x3D; throttle(dosomeThing,2000);</span><br><span class="line"></span><br><span class="line">let dosome &#x3D; throttle(dosomeThing,1000,&#123;</span><br><span class="line">    leading: false, </span><br><span class="line">    trailing: true &#x2F;&#x2F;禁止最一次触发执行</span><br><span class="line">&#125;);</span><br><span class="line">container.onmousemove &#x3D; dosome;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-利用时间戳"><a href="#1-利用时间戳" class="headerlink" title="1. 利用时间戳"></a>1. 利用时间戳</h4><p><strong><em>第一次会触发,最后一次会触发</em></strong> </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function throttle(func,wait)&#123;</span><br><span class="line">    let context,args;</span><br><span class="line">    &#x2F;&#x2F; 之前的时间戳</span><br><span class="line">    let oldTime &#x3D; 0;</span><br><span class="line">    return function()&#123;</span><br><span class="line">        context &#x3D; this;</span><br><span class="line">        args &#x3D; arguments;</span><br><span class="line">        &#x2F;&#x2F; 获取当前的时间戳</span><br><span class="line">        let nowTime &#x3D; new Date().valueOf();</span><br><span class="line">        if(nowTime-oldTime &gt; wait)&#123;</span><br><span class="line">            &#x2F;&#x2F; 立即执行</span><br><span class="line">            func.apply(context,args);</span><br><span class="line">            oldTime &#x3D; nowTime;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-利用定时器"><a href="#2-利用定时器" class="headerlink" title="2. 利用定时器"></a>2. 利用定时器</h4><p><strong><em>第一次不会触发,最后一次会触发</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function throttle(func,wait)&#123;</span><br><span class="line">    let context,args,timeout;</span><br><span class="line">    return function()&#123;</span><br><span class="line">        context &#x3D; this;</span><br><span class="line">        args &#x3D; arguments;</span><br><span class="line">        if(!timeout)&#123;</span><br><span class="line">            timeout &#x3D; setTimeout(()&#x3D;&gt;&#123;</span><br><span class="line">                func.apply(context,args);</span><br><span class="line">                timeout &#x3D; null;</span><br><span class="line">            &#125;,wait)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-结合时间戳和定时器使用"><a href="#3-结合时间戳和定时器使用" class="headerlink" title="3. 结合时间戳和定时器使用"></a>3. 结合时间戳和定时器使用</h4><p><strong><em>第一次直接执行,最后一次还会执行</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function throttle(func,wait)&#123;</span><br><span class="line">    let context,args,timeout;</span><br><span class="line">    &#x2F;&#x2F; 之前的时间戳</span><br><span class="line">    let oldTime &#x3D; 0;</span><br><span class="line">    let later &#x3D; function()&#123;</span><br><span class="line">        oldTime &#x3D; new Date().valueOf();</span><br><span class="line">        timeout &#x3D; null;</span><br><span class="line">        func.apply(context,args);</span><br><span class="line">    &#125;</span><br><span class="line">    return function()&#123;</span><br><span class="line">        context &#x3D; this;</span><br><span class="line">        args &#x3D; arguments;</span><br><span class="line">        &#x2F;&#x2F; 获取当前的时间戳</span><br><span class="line">        let nowTime &#x3D; new Date().valueOf();</span><br><span class="line">        if(nowTime-oldTime &gt; wait)&#123;</span><br><span class="line">            if(timeout)&#123;</span><br><span class="line">                clearTimeout(timeout);</span><br><span class="line">                timeout &#x3D; null;</span><br><span class="line">            &#125;</span><br><span class="line">            &#x2F;&#x2F; 立即执行</span><br><span class="line">            func.apply(context,args);</span><br><span class="line">            oldTime &#x3D; nowTime;</span><br><span class="line">        &#125;else if(!timeout)&#123;</span><br><span class="line">            timeout &#x3D; setTimeout(later,wait)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-节流优化"><a href="#4-节流优化" class="headerlink" title="4. 节流优化"></a>4. 节流优化</h4><p><strong><em>按需求控制第一次和最后一次触发的是否执行</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">function throttle(func,wait,options)&#123;</span><br><span class="line">    let context,args,timeout;</span><br><span class="line">    &#x2F;&#x2F; 之前的时间戳</span><br><span class="line">    let oldTime &#x3D; 0;</span><br><span class="line">    if (!options) options &#x3D; &#123;&#125;;</span><br><span class="line">    let later &#x3D; function()&#123;</span><br><span class="line">        oldTime &#x3D; new Date().valueOf();</span><br><span class="line">        timeout &#x3D; null;</span><br><span class="line">        func.apply(context,args);</span><br><span class="line">    &#125;</span><br><span class="line">    return function()&#123;</span><br><span class="line">        context &#x3D; this;</span><br><span class="line">        args &#x3D; arguments;</span><br><span class="line">        &#x2F;&#x2F; 获取当前的时间戳</span><br><span class="line">        let nowTime &#x3D; new Date().valueOf();</span><br><span class="line">        if(options.leading &#x3D;&#x3D;&#x3D; false &amp;&amp; !oldTime)&#123;</span><br><span class="line">            oldTime &#x3D; nowTime</span><br><span class="line">        &#125;</span><br><span class="line">        if(nowTime - oldTime &gt; wait)&#123;</span><br><span class="line">            &#x2F;&#x2F; 第一次会直接执行</span><br><span class="line">            if(timeout)&#123;</span><br><span class="line">                clearTimeout(timeout);</span><br><span class="line">                timeout &#x3D; null;</span><br><span class="line">            &#125;</span><br><span class="line">            func.apply(context,args);</span><br><span class="line">            oldTime &#x3D; nowTime;</span><br><span class="line">        &#125;else if(!timeout &amp;&amp; options.trailing !&#x3D;&#x3D; false)&#123;</span><br><span class="line">            &#x2F;&#x2F; 最后一次也会被执行</span><br><span class="line">            timeout &#x3D; setTimeout(later,wait)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>web开发</category>
+      </categories>
+      <tags>
+        <tag>优化性能</tag>
+        <tag>防抖</tag>
+        <tag>节流</tag>
+      </tags>
+  </entry>
+</search>
